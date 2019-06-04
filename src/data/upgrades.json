@@ -1,0 +1,334 @@
+{
+  "bank": {
+    "id": "bank",
+    "description": {
+      "name": "Open bank account",
+      "effect": "Lets you exchange currency",
+      "purchased": "Bank account"
+    },
+    "prereqs": {
+      "resources": {
+        "copper": 1000
+      }
+    },
+    "cost": {
+      "copper": 2000
+    }
+  },
+  "dwarvenEngineers": {
+    "id": "dwarvenEngineers",
+    "description": {
+      "name": "Hire dwarven engineers",
+      "effect": "These fellows kick start your research by developing cutting edge tech",
+      "purchased": "Dwarven engineers"
+    },
+    "prereqs": {
+      "resources": {
+        "silver": 100
+      }
+    },
+    "cost": {
+      "silver": 250
+    }
+  },
+  "enchantingShrine": {
+    "id": "enchantingShrine",
+    "description": {
+      "name": "Build enchanting shrine",
+      "effect": "Allows you to start getting mystical",
+      "purchased": "Enchanting shrine"
+    },
+    "purchased": "Enchanting shrine",
+    "prereqs": {
+      "resources": {
+        "rubies": 1,
+        "iron": 1
+      }
+    },
+    "cost": {
+      "rubies": 20,
+      "iron": 50,
+      "copper": 1000,
+      "silver": 100
+    }
+  },
+  "clockworkFactory": {
+    "id": "clockworkFactory",
+    "description": {
+      "name": "Automate clockwork forges",
+      "effect": "Increases forge output by a factor of 5",
+      "purchased": "Clockwork factories"
+    },
+    "prereqs": {
+      "resources": {
+        "gears": 200
+      },
+      "items": {
+        "clockworkForge": 1
+      }
+    },
+    "cost": {
+      "gears": 1000
+    },
+    "effects": {
+      "clockworkForge": {"multiplyOutput": 5}
+    }
+  },
+  "magesTower": {
+    "id": "magesTower",
+    "description": {
+      "name": "Construct mage's tower",
+      "effect": "Allows you to delve further into the realm of magic",
+      "purchased": "Mage's tower"
+    },
+    "prereqs": {
+      "upgrades": [
+        "enchantingShrine"
+      ],
+      "resources": {
+        "lead": 1
+      }
+    },
+    "cost": {
+      "rubies": 40,
+      "lead": 200,
+      "silver": 400
+    }
+  },
+  "silverDrillers": {
+    "id": "silverDrillers",
+    "description": {
+      "name": "Design silver-tipped bores",
+      "effect": "Double driller rig output",
+      "purchased": "Silver-tipped drillers"
+    },
+    "prereqs": {
+      "upgrades": [
+        "dwarvenEngineers"
+      ],
+      "items": {
+        "drillerRig": 1
+      },
+      "resources": {
+        "silver": 1000
+      }
+    },
+    "cost": {
+      "silver": 500
+    },
+    "effects": {
+      "drillerRig": {
+        "multiplyOutput": 2
+      }
+    }
+  },
+  "elementalBinding": {
+    "id": "elementalBinding",
+    "description": {
+      "name": "Bind elementals to arcane engines",
+      "effect": "Double driller rig output",
+      "purchased": "Elemental arcane engines"
+    },
+    "prereqs": {
+      "upgrades": [
+        "magesTower"
+      ],
+      "items": {
+        "drillerRig": 1
+      }
+    },
+    "cost": {
+      "rubies": 20,
+      "iron": 50,
+      "lead": 100
+    },
+    "effects": {
+      "drillerRig": {
+        "multiplyOutput": 2
+      }
+    }
+  },
+  "diviner": {
+    "id": "diviner",
+    "description": {
+      "name": "Recruit a diviner to help your miners",
+      "effect": "Triples chance to find rubies",
+      "purchased": "Diviner"
+    },
+    "prereqs": {
+      "upgrades": [
+        "enchantingShrine"
+      ],
+      "resources": {
+        "gold": 10
+      }
+    },
+    "cost": {
+      "gold": 50
+    },
+    "effects": {
+      "dwarvenMiner": {
+        "multiplyOutputChance": 3
+      }
+    }
+  },
+  "technomancer": {
+    "id": "technomancer",
+    "description": {
+      "name": "Combine dwarven engineering and magery",
+      "effect": "Mages more effective, reduce drilling rig cost",
+      "purchased": "Technomancers"
+    },
+    "prereqs": {
+      "upgrades": [
+        "dwarvenEngineers",
+        "magesTower"
+      ],
+      "items": {
+        "drillerRig": 1,
+        "mage": 1
+      }
+    },
+    "cost": {
+      "rubies": 50,
+      "gold": 100,
+      "lead": 300,
+      "iron": 700,
+      "gears": 500
+    },
+    "effects": {
+      "mage": {
+        "changeRunningCost": {
+          "gears": 50
+        }
+      },
+      "drillerRig": {
+        "changeCostFactor": 1.02,
+        "changeCost": {
+          "gears": 250,
+          "arcane engine": 42,
+          "iron": 1500
+        }
+      }
+    }
+  },
+  "lifeGems": {
+    "id": "lifeGems",
+    "description": {
+      "name": "Install lifegems on clockwork miners",
+      "effect": "Quadruples clockwork miner output",
+      "purchased": "Lifegems"
+    },
+    "prereqs": {
+      "upgrades": [
+        "enchantingShrine"
+      ],
+      "resources": {
+        "rubies": 10,
+        "silver": 100
+      }
+    },
+    "cost": {
+      "rubies": 15,
+      "silver": 150
+    },
+    "effects": {
+      "clockworkMiner": {
+        "multiplyOutput": 4
+      }
+    }
+  },
+  "goblinClerks": {
+    "id": "goblinClerks",
+    "description": {
+      "name": "Hire goblin clerks",
+      "effect": "Reduces clerk and clearing house price",
+      "purchased": "Goblin clerks"
+    },
+    "prereqs": {
+      "items": {
+        "clearingHouse": 5
+      }
+    },
+    "cost": {
+      "silver": 1000
+    },
+    "effects": {
+      "clerk": {
+        "changeCostFactor": 1.01
+      },
+      "clearingHouse": {
+        "changeCost": {
+          "copper": 500,
+          "iron": 5
+        }
+      }
+    }
+  },
+  "elvenNavigators": {
+    "id": "elvenNavigators",
+    "description": {
+      "name": "Hire elven navigators",
+      "effect": "Increases merchant ship effectiveness",
+      "purchased": "Elven navigators"
+    },
+    "prereqs": {
+      "items": {
+        "merchantShip": 5
+      }
+    },
+    "cost": {
+      "goods": 100
+    },
+    "effects": {
+      "merchantShip": {
+        "multiplyOutputChance": 4
+      }
+    }
+  },
+  "selfAssembly": {
+    "id": "selfAssembly",
+    "description": {
+      "name": "Develop self-assembling factories",
+      "effect": "Reduce clockwork forge price",
+      "purchased": "Self-assembling factories"
+    },
+    "prereqs": {
+      "items": {
+        "clockworkForge": 30
+      }
+    },
+    "cost": {
+      "rubies": 150,
+      "lead": 600,
+      "gears": 3000,
+      "iron": 10000
+    },
+    "effects": {
+      "clockworkForge": {
+        "changeCost": {
+          "iron": 30,
+          "copper": 1600
+        },
+        "changeCostFactor": 1.01
+      }
+    }
+  },
+  "curryFavour": {
+    "id": "curryFavour",
+    "description": {
+      "name": "Bribe your way to become official gold producer for the nation",
+      "effect": "Open new mining opportunities",
+      "purchased": "Friends in high places"
+    },
+    "cost": {
+      "gold": 8000
+    },
+    "prereqs": {
+      "items": {
+        "royalMint": 1
+      }
+    }
+  }
+
+}

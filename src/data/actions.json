@@ -1,0 +1,146 @@
+{
+  "mine": {
+    "id": "mine",
+    "description": {
+      "name": "Work in the copper mine"
+    },
+    "effect": {
+      "gainResource": {
+        "copper": 1
+      }
+    }
+  },
+  "mineIron": {
+    "id": "mineIron",
+    "description": {
+      "name": "Work in the iron mine"
+    },
+    "prereqs": {
+      "upgrades": [
+        "dwarvenEngineers"
+      ]
+    },
+    "effect": {
+      "gainResource": {
+        "iron": 1
+      }
+    }
+  },
+  "copperToSilver": {
+    "id": "copperToSilver",
+    "description": {
+      "name": "Change 100 copper to silver"
+    },
+    "prereqs": {
+      "resources": {
+        "copper": 100
+      },
+      "upgrades": [
+        "bank"
+      ]
+    },
+    "cost": {
+      "copper": 100
+    },
+    "effect": {
+      "gainResource": {
+        "silver": 1
+      }
+    }
+  },
+  "silverToGold": {
+    "id": "silverToGold",
+    "description": {
+      "name": "Change 100 silver to gold"
+    },
+    "prereqs": {
+      "resources": {
+        "silver": 1000
+      },
+      "upgrades": [
+        "bank"
+      ]
+    },
+    "cost": {
+      "silver": 100
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 1
+      }
+    }
+  },
+  "findLead": {
+    "id": "findLead",
+    "description": {
+      "name": "Get lead"
+    },
+    "prereqs": {
+      "upgrades": ["enchantingShrine"]
+    },
+    "effect": {
+      "gainResource": {
+        "lead": 10
+      }
+    }
+  },
+  "transmuteLead": {
+    "id": "transmuteLead",
+    "description": {
+      "name": "Attempt to transmute lead to gold"
+    },
+    "prereqs": {
+      "upgrades": ["enchantingShrine"]
+    },
+    "cost": {
+      "lead": 1
+    },
+    "effect": {
+      "gainResourceChance": {
+        "gold": 0.1
+      }
+    }
+  },
+  "enchantClockwork": {
+    "id": "enchantClockwork",
+    "description": {
+      "name": "Enchant 100 gears"
+    },
+    "prereqs": {
+      "resources": {
+        "gears": 100
+      },
+      "upgrades": [
+        "enchantingShrine"
+      ]
+    },
+    "cost": {
+      "gears": 100,
+      "iron": 50
+    },
+    "effect": {
+      "gainResource": {
+        "arcane engine": 1
+      }
+    }
+  },
+  "sellGoods": {
+    "id": "sellGoods",
+    "description": {
+      "name": "Sell goods for gold"
+    },
+    "prereqs": {
+      "resources": {
+        "goods": 1
+      }
+    },
+    "cost": {
+      "goods": 1
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 10
+      }
+    }
+  }
+}

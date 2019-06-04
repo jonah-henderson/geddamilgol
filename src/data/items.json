@@ -1,0 +1,377 @@
+{
+  "gnome": {
+    "id": "gnome",
+    "description": {
+      "name": "Gnome",
+      "detail": "Helps you in the copper mine",
+      "effect": "+1 copper/second"
+    },
+    "cost": {
+      "copper": 10
+    },
+    "type": "recyclable",
+    "costFactor": 1.05,
+    "prereqs": {
+      "resources": {
+        "copper": 20
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "copper": 1
+      }
+    }
+  },
+  "minecart": {
+    "id": "minecart",
+    "description": {
+      "name": "Minecart",
+      "detail": "Carries more copper out of your mines",
+      "effect": "+50 copper/second"
+    },
+    "cost": {
+      "copper": 500
+    },
+    "type": "recyclable",
+    "costFactor": 1.04,
+    "prereqs": {
+      "resources": {
+        "copper": 200
+      },
+      "items": {
+        "gnome": 10
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "copper": 50
+      }
+    }
+  },
+  "dwarvenMiner": {
+    "id": "dwarvenMiner",
+    "description": {
+      "name": "Dwarven miner",
+      "detail": "Works in the iron mine. Very efficient, but requires high wages",
+      "effect": "-1 silver/second, +5 iron/second, chance of rubies"
+    },
+    "cost": {
+      "silver": 3
+    },
+    "type": "recyclable",
+    "costFactor": 1.06,
+    "prereqs": {
+      "resources": {
+        "silver": 1
+      },
+      "upgrades": [
+        "dwarvenEngineers"
+      ]
+    },
+    "effect": {
+      "gainResource": {
+        "iron": 5
+      },
+      "gainResourceChance": {
+        "rubies": 0.01
+      }
+    },
+    "runningCost": {
+      "silver": 1
+    }
+  },
+  "clockworkForge": {
+    "id": "clockworkForge",
+    "description": {
+      "name": "Clockwork forge",
+      "detail": "Turns your raw copper into clockwork components",
+      "effect": "-100 copper/second, +1 gear/second"
+    },
+    "type": "recyclable",
+    "cost": {
+      "iron": 50,
+      "copper": 3000
+    },
+    "costFactor": 1.02,
+    "prereqs": {
+      "upgrades": [
+        "dwarvenEngineers"
+      ],
+      "resources": {
+        "iron": 10
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "gears": 1
+      }
+    },
+    "runningCost": {
+      "copper": 100
+    }
+  },
+  "clockworkMiner": {
+    "id": "clockworkMiner",
+    "description": {
+      "name": "Clockwork miner",
+      "detail": "Takes no wages or breaks.",
+      "effect": "+500 copper/second"
+    },
+    "type": "recyclable",
+    "cost": {
+      "gears": 50
+    },
+    "costFactor": 1.03,
+    "prereqs": {
+      "resources": {
+        "gears": 10
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "copper": 500
+      }
+    }
+  },
+  "mage": {
+    "id": "mage",
+    "description": {
+      "name": "Mage",
+      "details": "Enchants arcane engines"
+    },
+    "cost": {
+      "rubies": 1,
+      "silver": 50
+    },
+    "costFactor": 1.02,
+    "prereqs": {
+      "upgrades": [
+        "magesTower"
+      ],
+      "resources": {
+        "arcane engine": 20
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "arcane engine": 1
+      }
+    },
+    "runningCost": {
+      "gears": 100
+    }
+  },
+  "drillerRig": {
+    "id": "drillerRig",
+    "description": {
+      "name": "Driller rig",
+      "detail": "The last word in copper core-diving",
+      "effect": "+10,000 copper/second"
+    },
+    "type": "recyclable",
+    "cost": {
+      "gears": 500,
+      "arcane engine": 77,
+      "iron": 2000
+    },
+    "costFactor": 1.05,
+    "prereqs": {
+      "resources": {
+        "arcane engine": 10
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "copper": 10000
+      }
+    }
+  },
+  "clerk": {
+    "id": "clerk",
+    "description": {
+      "name": "Clerk",
+      "detail": "Automatically changes copper to silver, for a small fee",
+      "effect": "-110 copper/second, +1 silver/second"
+    },
+    "cost": {
+      "copper": 100
+    },
+    "type": "recyclable",
+    "costFactor": 1.04,
+    "prereqs": {
+      "resources": {
+        "silver": 25
+      },
+      "upgrades": [
+        "bank"
+      ]
+    },
+    "effect": {
+      "gainResource": {
+        "silver": 1
+      }
+    },
+    "runningCost": {
+      "copper": 110
+    }
+  },
+  "clearingHouse": {
+    "id": "clearingHouse",
+    "description": {
+      "name": "Clearing house",
+      "detail": "Change larger quantities of copper to silver, for a smaller fee"
+    },
+    "cost": {
+      "copper": 1000,
+      "iron": 10
+    },
+    "costFactor": 1.01,
+    "prereqs": {
+      "resources": {
+        "iron": 1
+      },
+      "items": {
+        "clerk": 12
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "silver": 100
+      }
+    },
+    "runningCost": {
+      "copper": 10100
+    }
+  },
+  "treasurer": {
+    "id": "treasurer",
+    "description": {
+      "name": "Treasurer",
+      "details": "Converts your silver to gold"
+    },
+    "cost": {
+      "gold": 20
+    },
+    "costFactor": 1.01,
+    "prereqs": {
+      "items": {
+        "clearingHouse": 10
+      },
+      "resources": {
+        "silver": 2000,
+        "gold": 10
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 1
+      }
+    },
+    "runningCost": {
+      "silver": 100
+    }
+  },
+  "royalMint": {
+    "id": "royalMint",
+    "description": {
+      "name": "Royal mint",
+      "detail": "Converts large amounts of silver to gold"
+    },
+    "cost": {
+      "gold": 1000,
+      "iron": 5000,
+      "rubies": 100
+    },
+    "costFactor": 1.005,
+    "prereqs": {
+      "resources": {
+        "gold": 1200
+      },
+      "items": {
+        "treasurer": 50
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 100
+      }
+    },
+    "runningCost": {
+      "silver": 10000
+    }
+  },
+  "merchantShip": {
+    "id": "merchantShip",
+    "description": {
+      "name": "Merchant ship",
+      "detail": "Occasionally brings goods from faraway lands"
+    },
+    "cost": {
+      "gold": 1000
+    },
+    "costFactor": 1.01,
+    "prereqs": {
+      "resources": {
+        "gold": 1000
+      }
+    },
+    "effect": {
+      "gainResourceChance": {
+        "goods": 0.2
+      }
+    }
+  },
+  "vendor": {
+    "id": "vendor",
+    "description": {
+      "name": "Vendor",
+      "detail": "Automatically sells your goods"
+    },
+    "cost": {
+      "gold": 100
+    },
+    "costFactor": 1.03,
+    "prereqs": {
+      "resources": {
+        "goods": 20
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 10
+      }
+    },
+    "runningCost": {
+      "goods": 1
+    }
+  },
+  "goldDigger": {
+    "id": "goldDigger",
+    "description": {
+      "name": "Autonomous gold excavator",
+      "detail": "Cut to the chase. Mine gold directly"
+    },
+    "cost": {
+      "iron": 2000,
+      "rubies": 100,
+      "lead": 50
+    },
+    "costFactor": 1.01,
+    "prereqs": {
+      "upgrades": [
+        "curryFavour"
+      ],
+      "resources": {
+        "gold": 5000
+      },
+      "items": {
+        "royalMint": 1
+      }
+    },
+    "effect": {
+      "gainResource": {
+        "gold": 1000
+      }
+    }
+  }
+}
