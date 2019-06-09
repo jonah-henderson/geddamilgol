@@ -247,7 +247,7 @@
     "id": "treasurer",
     "description": {
       "name": "Treasurer",
-      "details": "Converts your silver to gold"
+      "detail": "Converts your silver to gold"
     },
     "cost": {
       "gold": 20
