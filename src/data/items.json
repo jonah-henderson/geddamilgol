@@ -137,7 +137,7 @@
     "id": "mage",
     "description": {
       "name": "Mage",
-      "details": "Enchants arcane engines"
+      "detail": "Enchants arcane engines"
     },
     "cost": {
       "rubies": 1,
